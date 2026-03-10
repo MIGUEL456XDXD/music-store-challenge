@@ -14,8 +14,7 @@ class Transaction:
 
 class Disc:
 
-    def __init__(self, sid: str, title: str, artist: str,
-                 sale_price: float, purchase_price: float, quantity: int):
+    def __init__(self, sid: str, title: str, artist: str, sale_price: float, purchase_price: float, quantity: int):
 
         self.sid = sid
         self.title = title
@@ -50,3 +49,7 @@ class Disc:
             if t.type == Transaction.SELL:
                 total += t.copies
         return total
+
+    def __str__(self):
+        songs = ", ".join(self.song_list)
+        return f"SID: {self.sid}\nTitle: {self.title}\nArtist: {self.artist}\nSong List: {songs}"
