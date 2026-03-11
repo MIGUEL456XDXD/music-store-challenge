@@ -32,7 +32,7 @@ class Disc:
     def sell(self, copies: int):
         if copies > self.quantity:
             return False
-
+        else:
         self.quantity -= copies
         t = Transaction(Transaction.SELL, copies)
         self.transactions.append(t)
